@@ -4,10 +4,11 @@ import {quests} from './questsArray.js'
 export default function App() {
   return (
     <>
-      {quests.map(function(data, index) {
+      {quests.map(function(questi, index) {
         return(
-          <div className="questions" key={data.id}>
-            Question title :  {data.title}
+          <div className="questions" key={questi.id}>
+            <p>Question:  {questi.title}</p>
+            <p> Answer: {questi.text} </p>
           </div>
         )
       })}
