@@ -1,26 +1,28 @@
 import './styles.css';
 import {quests} from './questsArray.js'
+import Question from './question.js';
 
 export default function App() {
   return (
     <div>
-      <Question quests={quests} />
+      <Question questions={quests} />
     </div>
         )
 }       
-function Question ({quests}){
-  return(
-    <div className='questions'>
-        {quests.map(pregunta => (
-      <div className="questions" key={pregunta.id}>
-        <p>Question: 
-          <span>{pregunta.title}</span>
-        </p>
-        <p>Answer: 
-          {pregunta.text}
-        </p>
-      </div>
-        ))}
-    </div>
-        );
-}
+// function Question ({questions}){
+//   console.log(questions)
+//   return(
+//     <div className='questions' >
+//         {quests.map(pregunta => (
+//       <div className="questions" >
+//         <p className="item" >Question: 
+//           <span>{pregunta.title}</span>
+//         </p>
+//         <p>Answer: 
+//           {pregunta.text}
+//         </p>
+//       </div>
+//         ))}
+//     </div>
+//   );
+// }
