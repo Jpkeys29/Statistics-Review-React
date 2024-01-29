@@ -3,29 +3,24 @@ import {quests} from './questsArray.js'
 
 export default function App() {
   return (
-    <>
-      {quests.map(function(questi, index) {
-        return(
-          <div className="questions" key={questi.id}>
-            <p>Question:  {questi.title}</p>
-            <p> Answer: {questi.text} </p>
-          </div>
+    <div>
+      <Question quests={quests} />
+    </div>
         )
-      })}
-    </>
-  )
+}       
+function Question ({quests}){
+  return(
+    <div className='questions'>
+        {quests.map(pregunta => (
+      <div className="questions" key={pregunta.id}>
+        <p>Question: 
+          <span>{pregunta.title}</span>
+        </p>
+        <p>Answer: 
+          {pregunta.text}
+        </p>
+      </div>
+        ))}
+    </div>
+        );
 }
-
-// function Question (){
-//   return(
-//     <div className='questions'>
-
-//     </div>
-//   )
-// }
-// const listQuests = quests.map(quest => <li key={quest.id} >{quest.title} {quest.text} </li>)
-// return (
-//   <div className='questions'>
-//     <ul>{listQuests}</ul>
-//   </div>
-// )
