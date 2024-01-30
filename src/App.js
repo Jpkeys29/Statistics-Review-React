@@ -1,28 +1,14 @@
 import './styles.css';
 import {quests} from './questsArray.js'
 import Question from './question.js';
+import NavBar from './navbar.js';
 
 export default function App() {
   return (
     <div>
-      <Question questions={quests} />
+      <NavBar />
+      <Question />
     </div>
         )
 }       
-// function Question ({questions}){
-//   console.log(questions)
-//   return(
-//     <div className='questions' >
-//         {quests.map(pregunta => (
-//       <div className="questions" >
-//         <p className="item" >Question: 
-//           <span>{pregunta.title}</span>
-//         </p>
-//         <p>Answer: 
-//           {pregunta.text}
-//         </p>
-//       </div>
-//         ))}
-//     </div>
-//   );
-// }
+
