@@ -1,24 +1,13 @@
 import Button from './button.js';
 import {quests} from './questsArray.js'
 
-function Question ({questions}){
-    function answer(){
-        alert(quests.map((quest) => quest.text));
-    }
-      return(
-        <div className='questions'>
-            {quests.map(pregunta=> (
-          <div className="questions" key={pregunta.id} >
-            <p className="item" >Question: 
-              <span>{pregunta.title}</span>
-            </p>
-            <Button answer={answer} />
-            <p>Answer: 
-              {pregunta.text}
-            </p>
-          </div>
-            ))}
+export default function Question ({num, title, answer}){
+    return (
+        <div className='item' >
+            <p>{num}</p>
+            <p>{title}</p>
+            <p>+</p>
+            <div>{answer}</div>
         </div>
-      );
+    )   
 }
-export default Question;

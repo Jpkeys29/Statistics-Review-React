@@ -6,7 +6,6 @@ import NavBar from './navbar.js';
 export default function App() {
   return (
     <div>
-      <NavBar />
       <Question />
     </div>
         )
