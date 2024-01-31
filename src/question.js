@@ -1,13 +1,17 @@
-import Button from './button.js';
 import {quests} from './questsArray.js'
 
 export default function Question ({num, title, answer}){
     return (
-        <div className='item' >
+        
+        <div className='questions' >
             <p>{num}</p>
-            <p>{title}</p>
-            <p>+</p>
-            <div>{answer}</div>
-        </div>
-    )   
+            {quests.map((ele, index) => (
+                <div key={index} >
+                <p className='title' >{ele.title}</p>
+                <p>+</p>
+                <div>{ele.answer}</div>
+                </div>
+            ))}
+        </div>          
+    );    
 }

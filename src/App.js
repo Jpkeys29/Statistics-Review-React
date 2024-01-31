@@ -6,8 +6,8 @@ import NavBar from './navbar.js';
 export default function App() {
   return (
     <div>
-      <Question />
+      <Question preguntas={quests}/>
     </div>
-        )
+  );
 }       
 

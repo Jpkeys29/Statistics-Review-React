@@ -17,7 +17,7 @@ export const quests = [
     {
         id: 4,
         title : "Is 'random' desirable in a sample?",
-        answer : 'Yes, it decreases the chances of a bias'
+        answer : 'Yes, it decreases the chances of a unrepresentative sample of the population(bias)'
     },
 
 ];
