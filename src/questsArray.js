@@ -1,13 +1,13 @@
 export const quests = [
     {
         id : 1,
-        title : "What are the 4 steps of the statistical analysis?",
-        answer : ''
+        title : "What are the 2 types of statistical studies?",
+        answer : 'Observational study and Experiment'
     },
     {
         id: 2,
         title : "What are the types of research questions?",
-        answer : 'Cause-and-effect'
+        answer : 'About a population and Cause-and-effect'
     },
     {
         id: 3,
@@ -17,7 +17,7 @@ export const quests = [
     {
         id: 4,
         title : "Is 'random' desirable in a sample?",
-        answer : 'Yes, it decreases the chances of a unrepresentative sample of the population(bias)'
+        answer : 'Yes, it decreases the chances of an unrepresentative sample of the population(biased)'
     },
 
 ];

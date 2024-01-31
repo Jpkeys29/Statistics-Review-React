@@ -33,6 +33,12 @@
     align-items: center;
   }
 
+  .number {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ced4da;
+  }
+
   .button {
     background-color: var(--color-lightest);
     color: #343a40;
@@ -48,4 +54,20 @@
   .icon {
     font-size: 24px;
     font-weight: 500;
+  }
+
+  .content-box {
+    grid-column: 2 / -1;
+    padding-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .content-box ul {
+    color: #868e96;
+    margin-left: 16px;
+    margin-top: 16px;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
