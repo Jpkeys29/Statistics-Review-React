@@ -10,7 +10,7 @@ export default function Question ({num, title, answer}){
                 <div key={index} className='item' >
                 <p className='number'>{ele.id}</p> 
                 <p className='title' >{ele.title}</p>
-                <p className='icon' >+</p>
+                <p className='icon'>{isOpen ? "-" : "+"}</p>
                 {isOpen && <div className='content-box' >{ele.answer}</div>}
                 </div>   
             ))}
