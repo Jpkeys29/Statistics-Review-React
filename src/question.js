@@ -13,17 +13,20 @@ export default function Questions ({preguntas}) {
 }
 
 function IndividQuestion({num, title, answer}){
-    function handleToggle(){
+    const [isOpen, setIsOpen] = useState(false);
 
+    function handleToggle(){
+        setIsOpen((currentState) => !currentState)
     }
+
     return(
-        <div className='item'>
+        <div className='item' onClick={handleToggle}>
             <p className='number'>{num} </p>
             <p className='title'>{title} </p>
-            <p className='icon'>-</p>
-            <div className='content-box'>
+            <p className='icon'>{isOpen ? "-" : "+"} </p>
+            {isOpen && <div className='content-box'>
                 {answer}
-            </div>
+            </div>}
         </div>
     )
 }
