@@ -4,23 +4,31 @@ import { useState } from 'react';
 
 export default function Questions ({preguntas}) {
     const [questionIndex, setQuestionIndex] = useState(0);
+    const [isOpen, setIsOpen] = useState(false);
+// 
 
-    function goNext() {
-        setQuestionIndex((prevQuestion) => prevQuestion + 1);
-    }
-    function goBack() {
-        setQuestionIndex((prevQuestion) => prevQuestion - 1)
-    }
-    const onLastQuestion = questionIndex === preguntas.length - 1;
-    const onFirstQuestion = questionIndex === 0;
+function goNext() {
+    setQuestionIndex((prevQuestion) => prevQuestion + 1);
+}
+function goBack() {
+    setQuestionIndex((prevQuestion) => prevQuestion - 1)
+}
+function handleToggle(){
+    setIsOpen((currentState) => !currentState)
+}
+const onLastQuestion = questionIndex === preguntas.length - 1;
+const onFirstQuestion = questionIndex === 0;
 
     return(
         <div className='questions' >
             <button onClick={goNext} disabled={onLastQuestion} >Next Question</button>
             <button onClick={goBack} disabled={onFirstQuestion} >Previous Question</button>
-            {questionIndex + 1}
-            {preguntas[questionIndex].title}
-            {preguntas[questionIndex].answer}
+            <p>{questionIndex + 1}</p>
+            <h2>{preguntas[questionIndex].title}</h2>
+            <button onClick={handleToggle} >Answer</button>
+            {isOpen &&<div>
+                {preguntas[questionIndex].answer}   
+            </div>}
             {/* {preguntas.map((ele, index) => (
             <IndividQuestion 
             title={ele.title} 
@@ -32,23 +40,23 @@ export default function Questions ({preguntas}) {
     )
 }
 
-function IndividQuestion({num, title, answer}){
-    const [isOpen, setIsOpen] = useState(false);
-    function handleToggle(){
-        setIsOpen((currentState) => !currentState)
-    }
+// function IndividQuestion({num, title, answer}){
+//     const [isOpen, setIsOpen] = useState(false);
+//     function handleToggle(){
+//         setIsOpen((currentState) => !currentState)
+//     }
 
-    return(
-        <div className='item' onClick={handleToggle}>
-            <p className='number'>{num} </p>
-            <p className='title'>{title} </p>
-            <p className='icon'>{isOpen ? "-" : "+"} </p>
-            {isOpen && <div className='content-box'>
-                {answer}
-            </div>}
-        </div>
-    )
-}
+//     return(
+//         <div className='item' onClick={handleToggle}>
+//             <p className='number'>{num} </p>
+//             <p className='title'>{title} </p>
+//             <p className='icon'>{isOpen ? "-" : "+"} </p>
+//             {isOpen && <div className='content-box'>
+//                 {answer}
+//             </div>}
+//         </div>
+//     )
+// }
 
 // export default function Question ({num, title, answer, id}){
 //     const [isOpen, setIsOpen] = useState(false);
