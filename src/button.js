@@ -1,9 +1,11 @@
+import { useState } from 'react';
 
-export default function Button({answer}) {
+export default function Button({onReset}) {
     return(
-        <button onClick={answer} >
-            Answer
+        <button className="buttonAnswer" onClick={onReset}>
+            Reset
         </button>
+    
     );
 }
 

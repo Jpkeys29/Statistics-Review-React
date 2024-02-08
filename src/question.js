@@ -1,4 +1,4 @@
-// import Button from './button.js';
+import Button from './button.js';
 import {quests} from './questsArray.js'
 import { useState } from 'react';
 
@@ -19,16 +19,22 @@ function handleToggle(){
 const onLastQuestion = questionIndex === preguntas.length - 1;
 const onFirstQuestion = questionIndex === 0;
 
+function handleReset(){
+    setQuestionIndex(0)
+    setIsOpen(false)
+}
+
     return(
         <div className='questions' >
-            <button onClick={goNext} disabled={onLastQuestion} >Next Question</button>
-            <button onClick={goBack} disabled={onFirstQuestion} >Previous Question</button>
-            <p>{questionIndex + 1}</p>
-            <h2>{preguntas[questionIndex].title}</h2>
-            <button onClick={handleToggle} >Answer</button>
-            {isOpen &&<div>
+            <button onClick={goNext} disabled={onLastQuestion} className='button'>Next 👉</button>
+            <button onClick={goBack} disabled={onFirstQuestion} className='button'>Previous 👈</button>
+            <p className='number' >Question Number: {questionIndex + 1}</p>
+            <p className='title'>{preguntas[questionIndex].title}</p>
+            <button onClick={handleToggle}  className='buttonAnswer'>Answer</button>
+            {isOpen &&<div className='content-box'>
                 {preguntas[questionIndex].answer}   
             </div>}
+            <Button onReset={handleReset} />
             {/* {preguntas.map((ele, index) => (
             <IndividQuestion 
             title={ele.title} 

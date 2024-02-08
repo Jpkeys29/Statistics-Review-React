@@ -40,14 +40,34 @@
   }
 
   .button {
-    background-color: var(--color-lightest);
+    background-color: #e7e7e7;;
     color: #343a40;
     padding: 0.8rem 1.2rem;
-    border: none;
+    /* justify-content: center;
+    align-content: center;
+    align-items: center; */
+    border: aqua;
     border-radius: 7px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    width: 17%;
+    display: inline-block;
+    text-align: start;
+  }
+  .buttonAnswer {
+    background-color: #e7e7e7;;
+    color: #343a40;
+    padding: 0.8rem 1.2rem;
+    border: aqua;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 15%;
+    display: inline-block;
+    text-align: start;
+    cursor: pointer;
   }
 
   .title,
