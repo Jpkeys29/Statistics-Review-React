@@ -8,14 +8,19 @@ export default function Questions ({preguntas}) {
     function goNext() {
         setQuestionIndex((prevQuestion) => prevQuestion + 1);
     }
-    // const goBack = () => setQuestionIndex((prevQuestion) => prevQuestion - 1)
+    function goBack() {
+        setQuestionIndex((prevQuestion) => prevQuestion - 1)
+    }
+    const onLastQuestion = questionIndex === preguntas.length - 1;
+    const onFirstQuestion = questionIndex === 0;
 
     return(
         <div className='questions' >
-            <button onClick={goNext} >Siguiente</button>
-            title={preguntas[questionIndex].title}
-            answer={preguntas[questionIndex].answer}
-            num={questionIndex + 1}
+            <button onClick={goNext} disabled={onLastQuestion} >Next Question</button>
+            <button onClick={goBack} disabled={onFirstQuestion} >Previous Question</button>
+            {questionIndex + 1}
+            {preguntas[questionIndex].title}
+            {preguntas[questionIndex].answer}
             {/* {preguntas.map((ele, index) => (
             <IndividQuestion 
             title={ele.title} 
