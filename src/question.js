@@ -1,20 +1,34 @@
-import Button from './button.js';
+// import Button from './button.js';
 import {quests} from './questsArray.js'
 import { useState } from 'react';
 
 export default function Questions ({preguntas}) {
+    const [questionIndex, setQuestionIndex] = useState(0);
+
+    function goNext() {
+        setQuestionIndex((prevQuestion) => prevQuestion + 1);
+    }
+    // const goBack = () => setQuestionIndex((prevQuestion) => prevQuestion - 1)
+
     return(
         <div className='questions' >
-            {preguntas.map((ele, index) => (
-            <IndividQuestion title={ele.title} answer={ele.answer} num={index+1} key={ele.index}  />
-            ))}
+            <button onClick={goNext} >Siguiente</button>
+            title={preguntas[questionIndex].title}
+            answer={preguntas[questionIndex].answer}
+            num={questionIndex + 1}
+            {/* {preguntas.map((ele, index) => (
+            <IndividQuestion 
+            title={ele.title} 
+            answer={ele.answer} 
+            num={index+1} key={ele.index} />
+            ))} */}
+
         </div>
     )
 }
 
 function IndividQuestion({num, title, answer}){
     const [isOpen, setIsOpen] = useState(false);
-
     function handleToggle(){
         setIsOpen((currentState) => !currentState)
     }
