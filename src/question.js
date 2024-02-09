@@ -26,15 +26,17 @@ function handleReset(){
 
     return(
         <div className='questions' >
-            <button onClick={goNext} disabled={onLastQuestion} className='button'>Next 👉</button>
+            <nav className='topnav'>
+            <p className='number'>Question Number: {questionIndex + 1}</p>
             <button onClick={goBack} disabled={onFirstQuestion} className='button'>Previous 👈</button>
-            <p className='number' >Question Number: {questionIndex + 1}</p>
+            <button onClick={goNext} disabled={onLastQuestion} className='button'>Next 👉</button>
+            </nav>
             <p className='title'>{preguntas[questionIndex].title}</p>
             <button onClick={handleToggle}  className='buttonAnswer'>Answer</button>
             {isOpen &&<div className='content-box'>
                 {preguntas[questionIndex].answer}   
             </div>}
-            <Button onReset={handleReset} />
+            <Button onReset={handleReset} className='button-4'/>
             {/* {preguntas.map((ele, index) => (
             <IndividQuestion 
             title={ele.title} 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export default function Button({onReset}) {
     return(
-        <button className="buttonAnswer" onClick={onReset}>
+        <button className="button" style={{width:'11%'}}  onClick={onReset}>
             Reset
         </button>
     
