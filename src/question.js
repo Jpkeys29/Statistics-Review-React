@@ -30,7 +30,7 @@ function handleReset(){
             <p className='number'>Question Number: {questionIndex + 1}</p>
             <p className='number'>({questionIndex +1} of {preguntas.length})</p>
             <button onClick={goBack} disabled={onFirstQuestion} className='button'>Previous 👈</button>
-            <button onClick={goNext} disabled={onLastQuestion} className='button'>Next 👉</button>
+            {!isOpen &&<button onClick={goNext} disabled={onLastQuestion} className='button'>Next 👉</button>}
             </nav>
             <p className='title'>{preguntas[questionIndex].title}</p>
             <button onClick={handleToggle}  className='buttonAnswer'>Answer</button>
